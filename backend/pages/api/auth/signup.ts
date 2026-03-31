@@ -87,7 +87,7 @@ export default async function handler(
     .from('tenant_users')
     .select('id, tenant_id')
     .eq('user_id', user.id)
-    .single()
+    .maybeSingle() as { data: { id: string; tenant_id: string } | null }
 
   if (existingUser) {
     res.status(409).json({
