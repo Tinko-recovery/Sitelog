@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createClient } from '@supabase/supabase-js'
-import { supabaseAdmin, Language, TenantPlan } from '../../../lib/supabaseAdmin'
+import { supabaseAdmin, Language, TenantPlan, assertEnv } from '../../../lib/supabaseAdmin'
 
 interface SignupBody {
   tenantName: string
